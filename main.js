@@ -14,6 +14,10 @@ app.use(express.static('public'));
 var multer = require('multer');
 var storage = multer.memoryStorage();
 var upload = multer({storage: storage});
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs')
+
 //-------------------------- admin.js  ------------------------------------
 app.post('/', function(request, response){
   var _url = request.url;
